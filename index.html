@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RATNAYA JEWELLERS | Contemporary Indian Jewellery</title>
+  <meta name="description" content="Discover Ratnaya Jewellers — contemporary Indian jewellery designed for modern celebrations, everyday elegance and meaningful gifting.">
+  <link rel="canonical" href="http://localhost:8000/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="RATNAYA JEWELLERS | Contemporary Indian Jewellery">
+  <meta property="og:description" content="Discover Ratnaya Jewellers — contemporary Indian jewellery designed for modern celebrations, everyday elegance and meaningful gifting.">
+  <meta property="og:url" content="http://localhost:8000/">
+  <meta property="og:image" content="assets/images/hero-editorial.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#073F36">
+
+  <!-- Favicon / Font Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "JewelryStore",
+        "@id": "http://localhost:8000/#organization",
+        "name": "RATNAYA JEWELLERS",
+        "url": "http://localhost:8000/",
+        "logo": "http://localhost:8000/assets/images/hero-editorial.jpg",
+        "description": "Contemporary Indian jewellery designed for modern celebrations, everyday elegance and meaningful gifting.",
+        "telephone": "+91-98765-43210",
+        "priceRange": "₹₹₹₹",
+        "currenciesAccepted": "INR",
+        "paymentAccepted": "Cash, Credit Card, UPI, Net Banking",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "IN"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "http://localhost:8000/#website",
+        "url": "http://localhost:8000/",
+        "name": "RATNAYA JEWELLERS",
+        "publisher": {
+          "@id": "http://localhost:8000/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "http://localhost:8000/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "name": "Bestsellers Collection",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Product",
+              "name": "The Apsara Emerald Floral Studs",
+              "image": "http://localhost:8000/assets/images/prod-emerald-studs.jpg",
+              "description": "Handcrafted floral ear studs with natural emerald centers and diamond halos in 18K yellow gold.",
+              "offers": {
+                "@type": "Offer",
+                "price": "38500",
+                "priceCurrency": "INR",
+                "availability": "https://schema.org/InStock"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Product",
+              "name": "The Maya Teardrop Emerald Pendant",
+              "image": "http://localhost:8000/assets/images/prod-teardrop-pendant.jpg",
+              "description": "Pear-cut vibrant Colombian emerald pendant with micro-pavé diamonds on an 18K gold chain.",
+              "offers": {
+                "@type": "Offer",
+                "price": "42000",
+                "priceCurrency": "INR",
+                "availability": "https://schema.org/InStock"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- 1. ANNOUNCEMENT BAR -->
+  <aside class="announcement" aria-label="Announcement">
+    <span class="announcement-badge">COMPLIMENTARY INSURED SHIPPING</span>
+    <div class="announcement-center">
+      <span class="announcement-arrow">‹</span>
+      <span>❖ NEW ARRIVALS • TIMELESS CRAFT • RATNAYA JEWELLERS ❖</span>
+      <span class="announcement-arrow">›</span>
+    </div>
+    <span class="announcement-badge">ON ORDERS ABOVE ₹2,999</span>
+  </aside>
+
+  <!-- 2. SITE HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="header-main">
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Center Logo -->
+      <a class="logo" href="index.html" aria-label="RATNAYA JEWELLERS Home">
+        <span class="logo-name">RATNAYA</span>
+        <span class="logo-subtitle">JEWELLERS</span>
+      </a>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <button class="header-action" id="search-trigger" aria-label="Search collection">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button class="header-action" id="wishlist-trigger" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="badge-count" id="wishlist-count">0</span>
+        </button>
+        <button class="header-action" aria-label="Account profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+        <button class="header-action" id="cart-trigger" aria-label="Shopping bag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="badge-count" id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav id="main-nav" class="main-nav" aria-label="Primary navigation">
+      <a href="#new-arrivals" class="active">New Arrivals</a>
+      <a href="#categories">Jewellery</a>
+      <a href="#collections">Collections</a>
+      <a href="#bestsellers">Bestsellers</a>
+      <a href="#gifting">Gifting</a>
+      <a href="#campaign">Editorial</a>
+      <a href="#story">Our Story</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 3. FULL-WIDTH EDITORIAL HERO -->
+    <section class="hero" id="new-arrivals" aria-label="Hero Editorial Campaign">
+      <div class="hero-content">
+        <p class="eyebrow">THE RATNAYA EDIT</p>
+        <h1>Jewellery<br>that feels<br><em>timeless.</em></h1>
+        <p class="hero-description">
+          Modern designs. Indian soul. Created for everyday moments and a lifetime of stories.
+        </p>
+        <div class="hero-cta">
+          <a class="button button-dark" href="#categories">
+            EXPLORE NEW ARRIVALS
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a class="button button-outline" href="#story">
+            OUR STORY
+          </a>
+        </div>
+        <div class="hero-slider-nav">
+          <div class="slider-line active" aria-hidden="true"></div>
+          <div class="slider-dot" aria-hidden="true"></div>
+          <div class="slider-dot" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="hero-aside-tag">
+        RATNAYA JEWELLERS
+        <span>FOR MODERN STORIES</span>
+      </div>
+
+      <div class="hero-image-wrap">
+        <img 
+          src="assets/images/hero-editorial.jpg" 
+          alt="Contemporary Indian model wearing handcrafted emerald floral earrings and gold jewellery" 
+          width="1200" 
+          height="800"
+          loading="eager"
+          fetchpriority="high"
+        >
+      </div>
+    </section>
+
+    <!-- 4. SHOP BY CATEGORY -->
+    <section class="section" id="categories" aria-labelledby="cat-heading">
+      <div class="section-header">
+        <div>
+          <p class="section-eyebrow">SHOP BY CATEGORY</p>
+          <h2 class="section-title" id="cat-heading">Find your signature piece.</h2>
+        </div>
+        <a class="text-link" href="#bestsellers">
+          View All Categories
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <div class="category-grid">
+        <!-- Earrings -->
+        <a class="category-card" href="category-earrings.html">
+          <img src="assets/images/cat-earrings.jpg" alt="Fine Indian handcrafted emerald and diamond earrings" width="400" height="480" loading="lazy">
+          <div class="category-overlay">
+            <span class="category-name">Earrings</span>
+            <span class="category-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <!-- Rings -->
+        <a class="category-card" href="category-rings.html">
+          <img src="assets/images/cat-rings.jpg" alt="Solid 18K yellow gold and diamond solitaire rings" width="400" height="480" loading="lazy">
+          <div class="category-overlay">
+            <span class="category-name">Rings</span>
+            <span class="category-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <!-- Necklaces -->
+        <a class="category-card" href="category-necklaces.html">
+          <img src="assets/images/cat-necklaces.jpg" alt="Delicate gold chain necklaces with natural emerald pendants" width="400" height="480" loading="lazy">
+          <div class="category-overlay">
+            <span class="category-name">Necklaces</span>
+            <span class="category-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <!-- Bracelets -->
+        <a class="category-card" href="category-bracelets.html">
+          <img src="assets/images/cat-bracelets.jpg" alt="Handcrafted Colombian emerald and diamond tennis bracelets" width="400" height="480" loading="lazy">
+          <div class="category-overlay">
+            <span class="category-name">Bracelets</span>
+            <span class="category-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <!-- Mangalsutras -->
+        <a class="category-card" href="category-mangalsutras.html">
+          <img src="assets/images/cat-mangalsutras.jpg" alt="Modern minimalist diamond trio Indian mangalsutra" width="400" height="480" loading="lazy">
+          <div class="category-overlay">
+            <span class="category-name">Mangalsutras</span>
+            <span class="category-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 5. THE SIGNATURE COLLECTION -->
+    <section class="collection-feature" id="collections" aria-labelledby="sig-heading">
+      <div class="collection-content">
+        <p class="eyebrow">THE SIGNATURE COLLECTION</p>
+        <h2 id="sig-heading">Indian elegance,<br>edited for today.</h2>
+        <p>
+          A quiet editorial exploration of heritage silhouettes reimagined with contemporary restraint — keeping the natural stones and metalwork honest and uncompromised.
+        </p>
+        <a class="button button-tiffany" href="#bestsellers">
+          VIEW COLLECTION
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <div class="collection-aside-text">
+        TRADITION MEETS A<br>BRIGHTER TOMORROW
+      </div>
+
+      <div class="collection-image-wrap">
+        <img 
+          src="assets/images/signature-collection.jpg" 
+          alt="The Signature Collection heirloom emerald cushion cocktail ring on sculptural glass plinth" 
+          width="1000" 
+          height="620" 
+          loading="lazy"
+        >
+      </div>
+    </section>
+
+    <!-- 6. MOST LOVED / BESTSELLERS -->
+    <section class="section" id="bestsellers" aria-labelledby="best-heading">
+      <div class="section-header">
+        <div>
+          <p class="section-eyebrow">MOST LOVED</p>
+          <h2 class="section-title" id="best-heading">Bestsellers</h2>
+        </div>
+        <a class="text-link" href="category-earrings.html">
+          View All Pieces
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <div class="product-grid">
+        <!-- Product 1: Emerald Studs -->
+        <article class="product-card" data-sku="RAT-EAR-01" data-name="The Apsara Emerald Floral Studs" data-price="38500">
+          <div class="product-image">
+            <span class="product-tag">SIGNATURE</span>
+            <button class="wishlist-btn" aria-label="Add to wishlist">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </button>
+            <img src="assets/images/prod-emerald-studs.jpg" alt="The Apsara Emerald Floral Studs in 18K yellow gold" width="400" height="400" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-category-label">EARRINGS • 18K GOLD</p>
+            <h3 class="product-name">The Apsara Emerald Floral Studs</h3>
+            <p class="product-specs">Colombian Emerald • VVS Diamonds • 18K Gold</p>
+            <div class="product-price-row">
+              <span class="price">₹ 38,500</span>
+              <button class="quick-add-btn">Add to Bag</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 2: Teardrop Pendant -->
+        <article class="product-card" data-sku="RAT-NEC-02" data-name="The Maya Teardrop Emerald Pendant" data-price="42000">
+          <div class="product-image">
+            <span class="product-tag">BESTSELLER</span>
+            <button class="wishlist-btn" aria-label="Add to wishlist">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </button>
+            <img src="assets/images/prod-teardrop-pendant.jpg" alt="The Maya Teardrop Emerald Pendant Necklace" width="400" height="400" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-category-label">NECKLACES • 18K GOLD</p>
+            <h3 class="product-name">The Maya Teardrop Pendant</h3>
+            <p class="product-specs">Pear-Cut Emerald • Pavé Halo • 18K Gold</p>
+            <div class="product-price-row">
+              <span class="price">₹ 42,000</span>
+              <button class="quick-add-btn">Add to Bag</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 3: Cocktail Ring -->
+        <article class="product-card" data-sku="RAT-RNG-03" data-name="The Sovereign Emerald Cocktail Ring" data-price="64500">
+          <div class="product-image">
+            <span class="product-tag">LIMITED</span>
+            <button class="wishlist-btn" aria-label="Add to wishlist">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </button>
+            <img src="assets/images/prod-cocktail-ring.jpg" alt="The Sovereign Emerald Cocktail Ring in engraved 18K gold" width="400" height="400" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-category-label">RINGS • HEIRLOOM</p>
+            <h3 class="product-name">The Sovereign Cocktail Ring</h3>
+            <p class="product-specs">Cushion Emerald • Double Halo • 18K Yellow Gold</p>
+            <div class="product-price-row">
+              <span class="price">₹ 64,500</span>
+              <button class="quick-add-btn">Add to Bag</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 4: Emerald Tennis Bracelet -->
+        <article class="product-card" data-sku="RAT-BRC-04" data-name="The Veda Emerald Tennis Bracelet" data-price="58000">
+          <div class="product-image">
+            <span class="product-tag">NEW</span>
+            <button class="wishlist-btn" aria-label="Add to wishlist">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </button>
+            <img src="assets/images/prod-emerald-bracelet.jpg" alt="The Veda Colombian Emerald Tennis Bracelet" width="400" height="400" loading="lazy">
+          </div>
+          <div class="product-info">
+            <p class="product-category-label">BRACELETS • 18K GOLD</p>
+            <h3 class="product-name">The Veda Emerald Tennis Bracelet</h3>
+            <p class="product-specs">Oval Emeralds • Brilliant Cut Diamonds • 18K Gold</p>
+            <div class="product-price-row">
+              <span class="price">₹ 58,000</span>
+              <button class="quick-add-btn">Add to Bag</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 7. EDITORIAL / GIFTING SECTION -->
+    <section class="gifting-section" id="gifting" aria-labelledby="gifting-title">
+      <div class="gifting-image">
+        <img 
+          src="assets/images/gifting-editorial.jpg" 
+          alt="Luxury Ratnaya emerald green gift box with champagne silk ribbon and gold necklace on travertine" 
+          width="700" 
+          height="600" 
+          loading="lazy"
+        >
+      </div>
+      <div class="gifting-content">
+        <p class="eyebrow">GIFTING AT RATNAYA</p>
+        <h2 id="gifting-title">Made to be<br>remembered.</h2>
+        <p class="gifting-quote">
+          “Something worth keeping. For her. For you. For always.”
+        </p>
+        <p>
+          Whether celebrating a quiet milestone or a monumental beginning, each Ratnaya creation arrives enclosed in our signature forest green presentation box, bound with champagne grosgrain ribbon and accompanied by its certificate of authenticity.
+        </p>
+
+        <div class="gift-tags">
+          <a href="#bestsellers" class="gift-tag">Gifts for Her</a>
+          <a href="#categories" class="gift-tag">Everyday Jewellery</a>
+          <a href="#collections" class="gift-tag">Wedding Gifts</a>
+          <a href="category-mangalsutras.html" class="gift-tag">Festive Jewellery</a>
+        </div>
+
+        <a class="button button-tiffany" href="#bestsellers">
+          EXPLORE GIFT GUIDE
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- 8. MODEL CAMPAIGN SECTION ("Indian Craft × Modern Fashion") -->
+    <section class="campaign-modern" id="campaign" aria-labelledby="camp-title">
+      <div class="campaign-card">
+        <div class="campaign-visual">
+          <img 
+            src="assets/images/campaign-modern-fashion.jpg" 
+            alt="Contemporary Indian fashion model styled in tailored charcoal blazer with handcrafted emerald fine jewellery" 
+            width="800" 
+            height="700" 
+            loading="lazy"
+          >
+        </div>
+        <div class="campaign-info">
+          <p class="eyebrow">CONTEMPORARY PERSPECTIVE</p>
+          <h2 id="camp-title">Indian Craft ×<br>Modern Fashion</h2>
+          <p>
+            We design for the woman who wears heritage emeralds with an Italian wool blazer, and heirlooms on an ordinary Tuesday afternoon. No occasion required.
+          </p>
+
+          <div class="campaign-features">
+            <div class="campaign-feature">
+              <h4>Modern Silhouettes</h4>
+              <p>Architectural lines, balanced weight and clean stone prongs engineered for daily wear.</p>
+            </div>
+            <div class="campaign-feature">
+              <h4>Indian Heritage</h4>
+              <p>Centuries of karigar filigree, kundankari precision and hallmarked precious metals.</p>
+            </div>
+          </div>
+
+          <a class="button button-outline" href="#categories">
+            EXPLORE THE CAMPAIGN
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. RATNAYA STORY SECTION -->
+    <section class="story-section" id="story" aria-labelledby="story-title">
+      <div class="story-grid">
+        <div class="story-image-wrap">
+          <img 
+            src="assets/images/story-craftsmanship.jpg" 
+            alt="Master karigar hands setting natural emerald stone at traditional wooden jewellery atelier workbench" 
+            width="650" 
+            height="550" 
+            loading="lazy"
+          >
+        </div>
+        <div class="story-copy">
+          <p class="eyebrow">THE RATNAYA ATELIER</p>
+          <h2 id="story-title">Crafted to be<br>remembered.</h2>
+          <p>
+            Every Ratnaya piece begins in our studio where master karigars translate centuries-old Indian goldsmithing into clean, architectural forms. We believe in slow jewellery: natural stones, certified hallmarked gold, and designs that transcend generations.
+          </p>
+
+          <div class="story-pillars">
+            <div class="story-pillar-item">
+              <span class="story-pillar-number">100%</span>
+              <span class="story-pillar-label">BIS Hallmarked 18K &amp; 22K Gold</span>
+            </div>
+            <div class="story-pillar-item">
+              <span class="story-pillar-number">0.0</span>
+              <span class="story-pillar-label">Conflict-Free Natural Stones</span>
+            </div>
+            <div class="story-pillar-item">
+              <span class="story-pillar-number">∞</span>
+              <span class="story-pillar-label">Lifetime Care &amp; Polish Support</span>
+            </div>
+          </div>
+
+          <a class="text-link" href="#categories">
+            DISCOVER OUR CRAFTSMANSHIP
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. TRUST STRIP -->
+    <aside class="trust-strip" aria-label="Brand Guarantees">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <span class="trust-title">AUTHENTIC CRAFTSMANSHIP</span>
+          <span class="trust-desc">Hand-set by master karigars</span>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="8" r="7"></circle>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+          </svg>
+          <span class="trust-title">BIS HALLMARKED GOLD</span>
+          <span class="trust-desc">Certified 18K &amp; 22K purity</span>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="1" y="3" width="15" height="13"></rect>
+            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+          </svg>
+          <span class="trust-title">COMPLIMENTARY SHIPPING</span>
+          <span class="trust-desc">100% insured delivery across India</span>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span class="trust-title">LIFETIME SERVICE</span>
+          <span class="trust-desc">Free cleaning, inspection &amp; care</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 11. NEWSLETTER -->
+    <section class="newsletter" aria-labelledby="news-title">
+      <p class="eyebrow">STAY CLOSE</p>
+      <h2 id="news-title">New pieces. Stories.<br>First access.</h2>
+      <p>Subscribe for private invitations to trunk shows, intimate design notes, and limited edition releases.</p>
+
+      <form class="newsletter-form" id="newsletter-form">
+        <label class="sr-only" for="email">Email address</label>
+        <input id="email" type="email" placeholder="Enter your email address" required autocomplete="email">
+        <button type="submit">Join</button>
+      </form>
+      <p class="newsletter-subtext">We value discretion. Unsubscribe at any time.</p>
+    </section>
+  </main>
+
+  <!-- 12. FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand-col">
+        <span class="footer-logo">RATNAYA</span>
+        <p class="footer-tagline">FINE JEWELLERY • INDIAN SOUL</p>
+        <p class="footer-desc">
+          Contemporary Indian jewellery designed for modern celebrations, everyday elegance and meaningful gifting.
+        </p>
+        <p style="font-size: 11px; letter-spacing: 0.12em; color: var(--champagne); text-transform: uppercase;">
+          Mumbai • New Delhi • Jaipur
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>COLLECTIONS</h4>
+        <a href="category-earrings.html">Earrings</a>
+        <a href="category-rings.html">Rings</a>
+        <a href="category-necklaces.html">Necklaces</a>
+        <a href="category-bracelets.html">Bracelets</a>
+        <a href="category-mangalsutras.html">Mangalsutras</a>
+        <a href="#collections">The Signature Edit</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>CONCIERGE</h4>
+        <a href="#story">Atelier &amp; Craft</a>
+        <a href="#gifting">Gift Packaging</a>
+        <a href="#">Size &amp; Fit Guide</a>
+        <a href="#">Insured Shipping</a>
+        <a href="#">Returns &amp; Exchange</a>
+        <a href="#">Jewellery Care</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>CONNECT</h4>
+        <a href="mailto:concierge@ratnayajewellers.com">concierge@ratnayajewellers.com</a>
+        <a href="tel:+919876543210">+91 (0) 98765 43210</a>
+        <a href="#">Instagram @ratnayasilver</a>
+        <a href="#">WhatsApp Private Client</a>
+        <a href="#">Bespoke Appointments</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 RATNAYA JEWELLERS. ALL RIGHTS RESERVED.</span>
+      <div class="footer-bottom-links">
+        <a href="#">BIS Hallmarking</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-notice" id="toast-notice" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

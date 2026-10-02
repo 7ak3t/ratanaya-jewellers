@@ -1,0 +1,16 @@
+{
+  "sku": "RAT-0001",
+  "name": "Product Name",
+  "slug": "product-name",
+  "category": "Earrings",
+  "price": 0,
+  "currency": "INR",
+  "availability": "InStock",
+  "images": [],
+  "description": "",
+  "material": "",
+  "stones": [],
+  "dimensions": "",
+  "weight": "",
+  "care": ""
+}
