@@ -1,0 +1,990 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title id="page-title">The Apsara Emerald Floral Studs | RATNAYA JEWELLERS</title>
+  <meta name="description" id="page-meta-desc" content="Handcrafted in solid 18K gold with natural Colombian emeralds and brilliant diamonds by Ratnaya Jewellers.">
+  <link rel="stylesheet" href="styles.css?v=3.0">
+  <style>
+    /* PDP SPECIFIC LUXURY STYLING */
+    .pdp-container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 40px 48px 100px;
+    }
+
+    .pdp-breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .pdp-breadcrumbs a {
+      color: var(--muted);
+      transition: color 150ms;
+    }
+
+    .pdp-breadcrumbs a:hover {
+      color: var(--emerald);
+    }
+
+    .pdp-breadcrumbs span.current {
+      color: var(--forest);
+      font-weight: 600;
+    }
+
+    .pdp-layout {
+      display: grid;
+      grid-template-columns: 52% 48%;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* GALLERY COLUMN */
+    .pdp-gallery {
+      position: sticky;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .pdp-main-image-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: crosshair;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .pdp-main-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 120ms ease-out;
+      transform-origin: center center;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .pdp-main-image-wrap.is-zoomed .pdp-main-image {
+      transform: scale(2.4);
+    }
+
+    .pdp-zoom-badge {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(7, 63, 54, 0.9);
+      color: #FFFFFF;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 10.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      pointer-events: none;
+      backdrop-filter: blur(8px);
+      white-space: nowrap;
+      transition: opacity 200ms;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .pdp-main-image-wrap.is-zoomed .pdp-zoom-badge {
+      opacity: 0;
+    }
+
+    .pdp-thumbnails {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .pdp-thumb-btn {
+      width: 76px;
+      height: 76px;
+      border-radius: 6px;
+      border: 2px solid var(--border);
+      overflow: hidden;
+      background: var(--white);
+      cursor: pointer;
+      padding: 0;
+      transition: border-color 200ms, transform 150ms;
+    }
+
+    .pdp-thumb-btn.active, .pdp-thumb-btn:hover {
+      border-color: var(--forest);
+      transform: translateY(-2px);
+    }
+
+    .pdp-thumb-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* DETAILS COLUMN */
+    .pdp-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pdp-tag-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .pdp-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      background: var(--forest);
+      color: var(--champagne);
+      font-size: 9.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      border-radius: 2px;
+    }
+
+    .pdp-sku {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .pdp-category-eyebrow {
+      font-size: 11.5px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--emerald);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .pdp-title {
+      font-family: var(--serif);
+      font-size: clamp(32px, 3.5vw, 44px);
+      color: var(--charcoal);
+      line-height: 1.1;
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+
+    .pdp-rating-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .pdp-stars {
+      color: #D4AF37;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .pdp-rating-text {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    .pdp-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+
+    .pdp-price {
+      font-family: var(--serif);
+      font-size: 36px;
+      color: var(--forest);
+      font-weight: 600;
+    }
+
+    .pdp-tax-badge {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .pdp-description {
+      font-size: 14.5px;
+      color: var(--charcoal);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    /* METAL & OPTION SELECTORS */
+    .pdp-option-group {
+      margin-bottom: 24px;
+    }
+
+    .pdp-option-label {
+      display: block;
+      font-size: 11.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .pdp-metal-pills {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pdp-metal-pill {
+      padding: 10px 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      font-size: 12px;
+      color: var(--charcoal);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 180ms;
+    }
+
+    .pdp-metal-pill.active {
+      border-color: var(--forest);
+      background: rgba(7, 63, 54, 0.06);
+      color: var(--forest);
+      font-weight: 600;
+    }
+
+    .metal-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .dot-yellow { background: #E5C158; }
+    .dot-white { background: #D9D9D9; border: 1px solid #AAA; }
+    .dot-rose { background: #E8A88A; }
+
+    /* QUANTITY & ACTIONS */
+    .pdp-actions-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .pdp-qty-picker {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      height: 52px;
+    }
+
+    .pdp-qty-btn {
+      background: none;
+      border: none;
+      width: 44px;
+      height: 100%;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--charcoal);
+      transition: background 150ms;
+    }
+
+    .pdp-qty-btn:hover {
+      background: var(--border-light);
+    }
+
+    .pdp-qty-num {
+      min-width: 36px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .pdp-add-bag-btn {
+      flex: 1;
+      height: 52px;
+      background: var(--forest);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 12.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 250ms, transform 150ms;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .pdp-add-bag-btn:hover {
+      background: var(--emerald);
+      transform: translateY(-1px);
+    }
+
+    .pdp-whatsapp-btn {
+      width: 100%;
+      height: 48px;
+      background: #128C7E;
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 11.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: background 250ms;
+      margin-bottom: 28px;
+    }
+
+    .pdp-whatsapp-btn:hover {
+      background: #075E54;
+    }
+
+    /* TRUST HIGHLIGHTS */
+    .pdp-trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding: 20px;
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      margin-bottom: 36px;
+      text-align: center;
+    }
+
+    .pdp-trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pdp-trust-item svg {
+      color: var(--emerald);
+      width: 20px;
+      height: 20px;
+    }
+
+    .pdp-trust-item span {
+      font-size: 11px;
+      color: var(--charcoal);
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    /* ACCORDIONS */
+    .pdp-accordion-group {
+      border-top: 1px solid var(--border);
+    }
+
+    .pdp-accordion {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pdp-acc-trigger {
+      width: 100%;
+      padding: 18px 0;
+      background: none;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--charcoal);
+      transition: color 150ms;
+    }
+
+    .pdp-acc-trigger:hover {
+      color: var(--emerald);
+    }
+
+    .pdp-acc-icon {
+      font-size: 18px;
+      transition: transform 250ms;
+    }
+
+    .pdp-accordion.open .pdp-acc-icon {
+      transform: rotate(45deg);
+    }
+
+    .pdp-acc-content {
+      display: none;
+      padding-bottom: 20px;
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .pdp-accordion.open .pdp-acc-content {
+      display: block;
+    }
+
+    .pdp-spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .pdp-spec-table td {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .pdp-spec-table td:first-child {
+      color: var(--charcoal);
+      font-weight: 600;
+      width: 40%;
+    }
+
+    /* RELATED PRODUCTS */
+    .pdp-related-section {
+      max-width: var(--container);
+      margin: 80px auto 120px;
+      padding: 0 48px;
+    }
+
+    .pdp-related-title {
+      font-family: var(--serif);
+      font-size: 32px;
+      color: var(--forest);
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: 400;
+    }
+
+    .pdp-related-subtitle {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 960px) {
+      .pdp-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .pdp-gallery {
+        position: static;
+      }
+      .pdp-container, .pdp-related-section {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <aside class="announcement">
+    <span class="announcement-badge">CERTIFIED 18K GOLD</span>
+    <div class="announcement-center">
+      <span>❖ COMPLIMENTARY INSURED EXPRESS DELIVERY &amp; LUXURY VELVET CASKET ❖</span>
+    </div>
+    <span class="announcement-badge">AUTHENTICITY GUARANTEE</span>
+  </aside>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="header-main">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <a class="logo" href="index.html">
+        <span class="logo-name">RATNAYA</span>
+        <span class="logo-subtitle">JEWELLERS</span>
+      </a>
+
+      <div class="header-actions">
+        <button class="header-action" id="search-trigger" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="19" height="19"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+        <button class="header-action" id="wishlist-trigger" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="19" height="19"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="badge-count" id="wishlist-count">0</span>
+        </button>
+        <button class="header-action" id="cart-trigger" aria-label="Shopping bag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="19" height="19"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="badge-count" id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+
+    <nav id="main-nav" class="main-nav">
+      <a href="index.html#new-arrivals">New Arrivals</a>
+      <a href="index.html#categories" class="active">Jewellery</a>
+      <a href="index.html#collections">Collections</a>
+      <a href="index.html#bestsellers">Bestsellers</a>
+      <a href="index.html#gifting">Gifting</a>
+      <a href="index.html#story">Our Story</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="pdp-container">
+      <!-- Breadcrumbs -->
+      <nav class="pdp-breadcrumbs" aria-label="Breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="index.html#categories">Jewellery</a>
+        <span>/</span>
+        <a href="category-earrings.html" id="pdp-breadcrumb-cat">Earrings</a>
+        <span>/</span>
+        <span class="current" id="pdp-breadcrumb-title">The Apsara Emerald Floral Studs</span>
+      </nav>
+
+      <div class="pdp-layout">
+        <!-- Gallery Column with Interactive Magnifier -->
+        <div class="pdp-gallery">
+          <div class="pdp-main-image-wrap" id="pdp-main-image-wrap">
+            <img class="pdp-main-image" id="pdp-main-image" src="assets/images/prod-emerald-studs.jpg" alt="The Apsara Emerald Floral Studs">
+            <div class="pdp-zoom-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <span>Hover or move cursor to magnify details</span>
+            </div>
+          </div>
+          <div class="pdp-thumbnails" id="pdp-thumbnails">
+            <!-- Thumbnails injected by JS -->
+          </div>
+        </div>
+
+        <!-- Details Column -->
+        <div class="pdp-details">
+          <div class="pdp-tag-row">
+            <span class="pdp-tag" id="pdp-tag">BESTSELLER</span>
+            <span class="pdp-sku" id="pdp-sku">SKU: RAT-EAR-01</span>
+          </div>
+
+          <p class="pdp-category-eyebrow" id="pdp-category-eyebrow">18K GOLD • NATURAL EMERALDS</p>
+          <h1 class="pdp-title" id="pdp-title">The Apsara Emerald Floral Studs</h1>
+
+          <div class="pdp-rating-row">
+            <div class="pdp-stars">★★★★★</div>
+            <span class="pdp-rating-text">4.9 / 5.0 (28 Client Reviews)</span>
+            <span style="color:var(--border);">•</span>
+            <span class="pdp-rating-text" style="color:var(--forest);font-weight:600;">✓ In Stock</span>
+          </div>
+
+          <div class="pdp-price-row">
+            <span class="pdp-price" id="pdp-price">₹ 38,500</span>
+            <span class="pdp-tax-badge">Inclusive of all taxes &amp; insurance</span>
+          </div>
+
+          <p class="pdp-description" id="pdp-description">
+            The Apsara Floral Studs capture the eternal elegance of blooming sacred flora. Centered with natural, vivid green Colombian emeralds surrounded by a luminous halo of brilliant-cut VVS diamonds, these studs are handcrafted in solid 18K hallmarked yellow gold.
+          </p>
+
+          <!-- Metal Choice -->
+          <div class="pdp-option-group">
+            <label class="pdp-option-label">Metal Selection: <strong id="pdp-selected-metal" style="color:var(--forest);">18K Yellow Gold</strong></label>
+            <div class="pdp-metal-pills">
+              <button class="pdp-metal-pill active" data-metal="18K Yellow Gold">
+                <span class="metal-dot dot-yellow"></span>
+                <span>18K Yellow Gold</span>
+              </button>
+              <button class="pdp-metal-pill" data-metal="18K Rose Gold">
+                <span class="metal-dot dot-rose"></span>
+                <span>18K Rose Gold</span>
+              </button>
+              <button class="pdp-metal-pill" data-metal="18K White Gold / Platinum">
+                <span class="metal-dot dot-white"></span>
+                <span>18K White Gold</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quantity & Add to Bag -->
+          <div class="pdp-actions-row">
+            <div class="pdp-qty-picker">
+              <button class="pdp-qty-btn" id="pdp-qty-minus" aria-label="Decrease quantity">−</button>
+              <span class="pdp-qty-num" id="pdp-qty-num">1</span>
+              <button class="pdp-qty-btn" id="pdp-qty-plus" aria-label="Increase quantity">+</button>
+            </div>
+            <button class="pdp-add-bag-btn" id="pdp-add-bag-btn">
+              <span>ADD TO SHOPPING BAG</span>
+              <span>→</span>
+            </button>
+          </div>
+
+          <!-- WhatsApp Direct Concierge -->
+          <a class="pdp-whatsapp-btn" id="pdp-whatsapp-btn" href="#" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.076-2.029-.474-1.637-.674-2.678-2.339-2.759-2.447-.081-.108-.659-.878-.659-1.673 0-.795.414-1.185.56-1.347.145-.162.316-.202.421-.202.106 0 .211.002.302.007.098.005.228-.037.357.273.131.316.446 1.09.485 1.17.039.081.066.176.013.281-.053.106-.079.172-.158.263-.079.091-.167.202-.238.272-.08.077-.162.161-.07.319.092.158.409.674.877 1.091.603.537 1.111.703 1.269.782.159.079.251.069.345-.039.093-.108.397-.463.503-.621.106-.158.211-.132.356-.079.145.053.924.436 1.082.515.158.079.263.118.302.184.039.066.039.382-.105.787z"/>
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.054 22l4.98-1.306A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.167c-1.687 0-3.26-.523-4.57-1.42l-.328-.225-2.956.775.789-2.884-.216-.343A8.134 8.134 0 0 1 3.833 12c0-4.503 3.664-8.167 8.167-8.167 4.503 0 8.167 3.664 8.167 8.167 0 4.503-3.664 8.167-8.167 8.167z"/>
+            </svg>
+            <span>ORDER VIA WHATSAPP CONCIERGE</span>
+          </a>
+
+          <!-- Trust Strip -->
+          <div class="pdp-trust-grid">
+            <div class="pdp-trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>BIS 916 Hallmarked</span>
+            </div>
+            <div class="pdp-trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+              <span>Free Insured Delivery</span>
+            </div>
+            <div class="pdp-trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>15-Day Return Guarantee</span>
+            </div>
+          </div>
+
+          <!-- Accordions -->
+          <div class="pdp-accordion-group">
+            <!-- Specs -->
+            <div class="pdp-accordion open">
+              <button class="pdp-acc-trigger">
+                <span>Product Specifications</span>
+                <span class="pdp-acc-icon">+</span>
+              </button>
+              <div class="pdp-acc-content">
+                <table class="pdp-spec-table">
+                  <tr><td>Gold Purity</td><td id="pdp-spec-purity">18K Solid Yellow Gold (750)</td></tr>
+                  <tr><td>Precious Stones</td><td id="pdp-spec-gemstones">Natural Colombian Emeralds &amp; VVS Diamonds</td></tr>
+                  <tr><td>Gross Weight</td><td id="pdp-spec-weight">4.85 grams</td></tr>
+                  <tr><td>Dimensions</td><td id="pdp-spec-dim">11.2 mm diameter</td></tr>
+                  <tr><td>Certification</td><td id="pdp-spec-cert">BIS 916 Hallmark &amp; SGL Diamond Card</td></tr>
+                </table>
+              </div>
+            </div>
+
+            <!-- Shipping & Packaging -->
+            <div class="pdp-accordion">
+              <button class="pdp-acc-trigger">
+                <span>Insured Shipping &amp; Packaging</span>
+                <span class="pdp-acc-icon">+</span>
+              </button>
+              <div class="pdp-acc-content">
+                <p>Every Ratnaya order is transported in discreet, tamper-evident security parcels with 100% transit insurance. Hand-packed inside our signature emerald velvet presentation casket with champagne silk ribbon and official authenticity certificate.</p>
+              </div>
+            </div>
+
+            <!-- Custom Sizing & Assistance -->
+            <div class="pdp-accordion">
+              <button class="pdp-acc-trigger">
+                <span>Custom Sizing &amp; Concierge</span>
+                <span class="pdp-acc-icon">+</span>
+              </button>
+              <div class="pdp-acc-content">
+                <p>Need a customized ring size, screw-back adjustment, or engraving? Our master jewelers in Mumbai can customize any piece. Connect directly with our atelier concierge via WhatsApp for bespoke requests.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Products -->
+    <section class="pdp-related-section">
+      <h2 class="pdp-related-title">You May Also Admire</h2>
+      <p class="pdp-related-subtitle">COMPLEMENTARY FINE JEWELLERY CREATIONS</p>
+      <div class="product-grid" id="pdp-related-grid">
+        <!-- Related cards injected by JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand-col">
+        <span class="footer-logo">RATNAYA</span>
+        <p class="footer-tagline">FINE JEWELLERY • INDIAN SOUL</p>
+        <p class="footer-desc">Contemporary Indian jewellery designed for modern celebrations, everyday elegance and meaningful gifting.</p>
+      </div>
+      <div class="footer-col">
+        <h4>COLLECTIONS</h4>
+        <a href="category-earrings.html">Earrings</a>
+        <a href="category-rings.html">Rings</a>
+        <a href="category-necklaces.html">Necklaces</a>
+        <a href="category-bracelets.html">Bracelets</a>
+        <a href="category-mangalsutras.html">Mangalsutras</a>
+      </div>
+      <div class="footer-col">
+        <h4>CONCIERGE</h4>
+        <a href="index.html#story">Atelier &amp; Craft</a>
+        <a href="index.html#gifting">Gift Packaging</a>
+        <a href="#">Size &amp; Fit Guide</a>
+        <a href="#">Insured Shipping</a>
+      </div>
+      <div class="footer-col">
+        <h4>CONNECT</h4>
+        <a href="mailto:concierge@ratnayajewellers.com">concierge@ratnayajewellers.com</a>
+        <a href="tel:+919876543210">+91 (0) 98765 43210</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 RATNAYA JEWELLERS. ALL RIGHTS RESERVED.</span>
+      <div class="footer-bottom-links"><a href="index.html">Home</a><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </footer>
+
+  <!-- Central Product Database & E-Commerce Script -->
+  <script src="data/products.js?v=3.0"></script>
+  <script src="script.js?v=3.0"></script>
+  <script>
+    // Dedicated PDP Controller
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Read SKU from URL query parameter ?sku=...
+      const urlParams = new URLSearchParams(window.location.search);
+      const sku = urlParams.get('sku') || 'RAT-EAR-01';
+      const product = getProductBySku(sku);
+
+      // 2. Set Page Metadata & Titles
+      document.title = `${product.name} | RATNAYA JEWELLERS`;
+      const metaDesc = document.getElementById('page-meta-desc');
+      if (metaDesc) metaDesc.content = product.description;
+
+      // 3. Populate Breadcrumbs
+      const bcCat = document.getElementById('pdp-breadcrumb-cat');
+      const bcTitle = document.getElementById('pdp-breadcrumb-title');
+      if (bcCat) {
+        bcCat.textContent = product.category;
+        bcCat.href = `category-${product.category.toLowerCase()}.html`;
+      }
+      if (bcTitle) bcTitle.textContent = product.name;
+
+      // 4. Populate Product Information
+      const titleElem = document.getElementById('pdp-title');
+      const priceElem = document.getElementById('pdp-price');
+      const descElem = document.getElementById('pdp-description');
+      const tagElem = document.getElementById('pdp-tag');
+      const skuElem = document.getElementById('pdp-sku');
+      const catEyebrowElem = document.getElementById('pdp-category-eyebrow');
+
+      if (titleElem) titleElem.textContent = product.name;
+      if (priceElem) priceElem.textContent = `₹ ${Number(product.price).toLocaleString('en-IN')}`;
+      if (descElem) descElem.textContent = product.description;
+      if (tagElem) tagElem.textContent = product.tag || 'SIGNATURE';
+      if (skuElem) skuElem.textContent = `SKU: ${product.sku}`;
+      if (catEyebrowElem) catEyebrowElem.textContent = product.categoryLabel || `${product.category.toUpperCase()} • 18K GOLD`;
+
+      // 5. Populate Specifications
+      const specPurity = document.getElementById('pdp-spec-purity');
+      const specGems = document.getElementById('pdp-spec-gemstones');
+      const specWeight = document.getElementById('pdp-spec-weight');
+      const specDim = document.getElementById('pdp-spec-dim');
+      const specCert = document.getElementById('pdp-spec-cert');
+
+      if (specPurity) specPurity.textContent = product.purity || 'Solid 18K Gold';
+      if (specGems) specGems.textContent = product.gemstones || 'Natural Certified Stones';
+      if (specWeight) specWeight.textContent = product.grossWeight || '4.50 grams';
+      if (specDim) specDim.textContent = product.dimensions || 'Standard Luxury Fit';
+      if (specCert) specCert.textContent = product.certification || 'BIS 916 Hallmarked';
+
+      // 6. Gallery & Interactive Magnifier
+      const mainImgWrap = document.getElementById('pdp-main-image-wrap');
+      const mainImg = document.getElementById('pdp-main-image');
+      const thumbsContainer = document.getElementById('pdp-thumbnails');
+
+      if (mainImg) {
+        mainImg.src = product.images[0];
+        mainImg.alt = product.name;
+      }
+
+      if (thumbsContainer) {
+        if (product.images.length > 1) {
+          thumbsContainer.innerHTML = product.images.map((src, idx) => `
+            <button class="pdp-thumb-btn ${idx === 0 ? 'active' : ''}" data-src="${src}" aria-label="View angle ${idx + 1}">
+              <img src="${src}" alt="${product.name} angle ${idx + 1}">
+            </button>
+          `).join('');
+
+          thumbsContainer.querySelectorAll('.pdp-thumb-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+              thumbsContainer.querySelectorAll('.pdp-thumb-btn').forEach(b => b.classList.remove('active'));
+              btn.classList.add('active');
+              if (mainImg) mainImg.src = btn.dataset.src;
+            });
+          });
+        } else {
+          thumbsContainer.innerHTML = '';
+        }
+      }
+
+      // Cursor Magnification
+      if (mainImgWrap && mainImg) {
+        mainImgWrap.addEventListener('mouseenter', () => {
+          mainImgWrap.classList.add('is-zoomed');
+        });
+
+        mainImgWrap.addEventListener('mousemove', (e) => {
+          const rect = mainImgWrap.getBoundingClientRect();
+          const x = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+          const y = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+          mainImg.style.transformOrigin = `${x}% ${y}%`;
+        });
+
+        mainImgWrap.addEventListener('mouseleave', () => {
+          mainImgWrap.classList.remove('is-zoomed');
+          mainImg.style.transformOrigin = 'center center';
+        });
+
+        mainImgWrap.addEventListener('click', () => {
+          mainImgWrap.classList.toggle('is-zoomed');
+        });
+      }
+
+      // 7. Metal Selection
+      let selectedMetal = '18K Yellow Gold';
+      const metalDisplay = document.getElementById('pdp-selected-metal');
+      const metalPills = document.querySelectorAll('.pdp-metal-pill');
+      metalPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          metalPills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          selectedMetal = pill.dataset.metal;
+          if (metalDisplay) metalDisplay.textContent = selectedMetal;
+        });
+      });
+
+      // 8. Quantity Picker
+      let quantity = 1;
+      const qtyNum = document.getElementById('pdp-qty-num');
+      const qtyMinus = document.getElementById('pdp-qty-minus');
+      const qtyPlus = document.getElementById('pdp-qty-plus');
+
+      if (qtyMinus) {
+        qtyMinus.addEventListener('click', () => {
+          quantity = Math.max(1, quantity - 1);
+          if (qtyNum) qtyNum.textContent = String(quantity);
+        });
+      }
+      if (qtyPlus) {
+        qtyPlus.addEventListener('click', () => {
+          quantity++;
+          if (qtyNum) qtyNum.textContent = String(quantity);
+        });
+      }
+
+      // 9. Add To Shopping Bag Action
+      const addBagBtn = document.getElementById('pdp-add-bag-btn');
+      if (addBagBtn) {
+        addBagBtn.addEventListener('click', () => {
+          if (window.RatnayaEngine && window.RatnayaEngine.addToCart) {
+            window.RatnayaEngine.addToCart({
+              sku: product.sku,
+              name: product.name,
+              price: product.price,
+              image: product.images[0],
+              specs: `${selectedMetal} • ${product.gemstones ? product.gemstones.substring(0, 45) : 'Solid Gold'}`,
+              qty: quantity
+            }, true);
+          }
+        });
+      }
+
+      // 10. WhatsApp Direct Button
+      const waBtn = document.getElementById('pdp-whatsapp-btn');
+      if (waBtn) {
+        const waMsg = `Hello RATNAYA JEWELLERS Concierge,\n\nI would like to order / enquire about *${product.name}* (SKU: ${product.sku}).\nMetal: ${selectedMetal}\nPrice: ₹${Number(product.price).toLocaleString('en-IN')}\n\nPlease confirm availability and delivery timelines.`;
+        waBtn.href = `https://wa.me/919876543210?text=${encodeURIComponent(waMsg)}`;
+      }
+
+      // 11. Accordion Toggles
+      document.querySelectorAll('.pdp-acc-trigger').forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const acc = trigger.closest('.pdp-accordion');
+          if (acc) acc.classList.toggle('open');
+        });
+      });
+
+      // 12. Render Related Products
+      const relatedGrid = document.getElementById('pdp-related-grid');
+      if (relatedGrid) {
+        const relatedList = (product.relatedSkus || [])
+          .map(skuCode => RATNAYA_PRODUCTS.find(p => p.sku === skuCode))
+          .filter(Boolean)
+          .slice(0, 4);
+
+        if (relatedList.length > 0) {
+          relatedGrid.innerHTML = relatedList.map(item => `
+            <article class="product-card" data-sku="${item.sku}" data-name="${item.name}" data-price="${item.price}">
+              <div class="product-image">
+                <span class="product-tag">${item.tag || 'SIGNATURE'}</span>
+                <button class="wishlist-btn" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <img class="img-primary" src="${item.images[0]}" alt="${item.name}" width="400" height="400">
+                ${item.images[1] ? `<img class="img-hover" src="${item.images[1]}" alt="${item.name} angle" width="400" height="400" loading="lazy">` : ''}
+              </div>
+              <div class="product-info">
+                <p class="product-category-label">${item.categoryLabel || item.category.toUpperCase()}</p>
+                <h3 class="product-name">${item.name}</h3>
+                <p class="product-specs">${item.shortDesc || ''}</p>
+                <div class="product-price-row">
+                  <span class="price">₹ ${Number(item.price).toLocaleString('en-IN')}</span>
+                  <button class="quick-add-btn">Add to Bag</button>
+                </div>
+              </div>
+            </article>
+          `).join('');
+
+          // Initialize interactions on newly rendered related product cards
+          if (window.RatnayaEngine && window.RatnayaEngine.initProductCards) {
+            window.RatnayaEngine.initProductCards(relatedGrid);
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
