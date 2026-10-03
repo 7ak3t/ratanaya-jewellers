@@ -1326,27 +1326,27 @@ button {
 .site-footer {
   background: var(--charcoal);
   color: var(--white);
-  padding: 100px 48px 40px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 64px 48px 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-grid {
   max-width: var(--container);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1.2fr 1.2fr 1.2fr;
-  gap: 60px;
+  grid-template-columns: 1.8fr 1.1fr 1.1fr 1.2fr;
+  gap: 44px;
 }
 
 .footer-brand-col {
-  padding-right: 40px;
+  padding-right: 20px;
 }
 
 .footer-logo {
   font-family: var(--serif);
-  font-size: 40px;
+  font-size: 32px;
   letter-spacing: 0.1em;
-  line-height: 0.9;
+  line-height: 0.95;
   font-weight: 500;
   color: var(--white);
   display: inline-block;
@@ -1354,36 +1354,36 @@ button {
 }
 
 .footer-tagline {
-  font-size: 9px;
-  letter-spacing: 0.3em;
+  font-size: 8.5px;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
   color: var(--champagne);
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .footer-desc {
   color: rgba(255, 255, 255, 0.65);
-  font-size: 13.5px;
-  line-height: 1.7;
-  margin-bottom: 28px;
-  max-width: 340px;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  max-width: 320px;
 }
 
 .footer-col h4 {
-  font-size: 11px;
-  letter-spacing: 0.2em;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--white);
-  margin-bottom: 22px;
-  font-weight: 600;
+  color: var(--champagne-light);
+  margin-bottom: 16px;
+  font-weight: 700;
 }
 
 .footer-col a {
   display: block;
-  margin: 12px 0;
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 13px;
-  transition: color 200ms;
+  margin: 9px 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 12.5px;
+  transition: color 180ms, transform 180ms;
 }
 
 .footer-col a:hover {
@@ -1393,10 +1393,10 @@ button {
 
 .footer-bottom {
   max-width: var(--container);
-  margin: 80px auto 0;
-  padding-top: 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  font-size: 11.5px;
+  margin: 44px auto 0;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  font-size: 11px;
   color: rgba(255, 255, 255, 0.45);
   display: flex;
   justify-content: space-between;
@@ -1592,18 +1592,185 @@ button {
     grid-template-columns: 1fr;
   }
 
+  /* REFINED LUXURY FOOTER FOR IPAD & TABLET (<= 860px) */
   .site-footer {
-    padding: 70px 20px 30px;
+    padding: 48px 24px 28px;
   }
 
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .footer-brand-col {
+    grid-column: 1 / -1;
+    padding-right: 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 8px;
+  }
+
+  .footer-logo {
+    font-size: 28px;
+    margin-bottom: 4px;
+  }
+
+  .footer-tagline {
+    font-size: 8px;
+    letter-spacing: 0.24em;
+    margin-bottom: 12px;
+  }
+
+  .footer-desc {
+    max-width: 100%;
+    font-size: 12.5px;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+
+  .footer-col h4 {
+    font-size: 10.5px;
+    letter-spacing: 0.15em;
+    margin-bottom: 12px;
+  }
+
+  .footer-col a {
+    font-size: 12px;
+    margin: 7px 0;
   }
 
   .footer-bottom {
+    margin: 32px auto 0;
+    padding-top: 18px;
     flex-direction: column;
     text-align: center;
-    gap: 14px;
+    gap: 12px;
+  }
+}
+
+/* =========================================================
+   COMPACT & IMPACTFUL LUXURY FOOTER FOR MOBILE & IOS (<= 600px)
+   ========================================================= */
+@media (max-width: 600px) {
+  .site-footer {
+    padding: 34px 16px calc(24px + env(safe-area-inset-bottom, 16px));
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 18px;
+    row-gap: 22px;
+  }
+
+  .footer-brand-col {
+    grid-column: 1 / -1;
+    padding-right: 0;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(215, 199, 165, 0.18);
+    margin-bottom: 0;
+  }
+
+  .footer-logo {
+    font-size: 24px;
+    letter-spacing: 0.08em;
+    margin-bottom: 2px;
+  }
+
+  .footer-tagline {
+    font-size: 7.5px;
+    letter-spacing: 0.22em;
+    margin-bottom: 8px;
+  }
+
+  .footer-desc {
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.62);
+    margin-bottom: 10px;
+    max-width: 100%;
+  }
+
+  .footer-brand-col p:last-child {
+    font-size: 9.5px !important;
+    letter-spacing: 0.14em !important;
+    color: var(--champagne-light) !important;
+  }
+
+  /* Collections Column (Left) */
+  .footer-col:nth-child(2) {
+    grid-column: 1;
+  }
+
+  /* Concierge Column (Right) */
+  .footer-col:nth-child(3) {
+    grid-column: 2;
+  }
+
+  .footer-col h4 {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--champagne);
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  .footer-col a {
+    font-size: 11.5px;
+    line-height: 1.4;
+    margin: 6px 0;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  /* Connect Section — Sleek Concierge Card spanning full width */
+  .footer-col:nth-child(4) {
+    grid-column: 1 / -1;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(215, 199, 165, 0.22);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-top: 2px;
+  }
+
+  .footer-col:nth-child(4) h4 {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--champagne-light);
+    margin-bottom: 8px;
+    text-align: left;
+  }
+
+  .footer-col:nth-child(4) a {
+    font-size: 11.5px;
+    margin: 5px 0;
+    color: rgba(255, 255, 255, 0.82);
+    display: block;
+    word-break: break-word;
+  }
+
+  .footer-bottom {
+    margin: 22px auto 0;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 10px;
+    gap: 8px;
+  }
+
+  .footer-bottom span {
+    letter-spacing: 0.06em;
+    font-size: 9.5px;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .footer-bottom-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .footer-bottom-links a {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.55);
   }
 }
 
