@@ -1,48 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-  /* ICONIC TIFFANY-INSPIRED LUXURY ARCHITECTURE */
-  /* Signature Tiffany Blue (#81D8D0 as sampled directly from Tiffany.com) */
-  --tiffany: #81D8D0;
-  --tiffany-rgb: 129, 216, 208;
-  --tiffany-hover: #72CBC3;
-  --tiffany-dark: #007D72;      /* Deep rich teal for accessible text on white */
-  --tiffany-deep: #093E38;      /* Deep luxury oceanic teal for statement feature sections */
-  --tiffany-soft: #D7F2EE;      /* Soft translucent Robin's egg tint */
-  --tiffany-light: #F0FAF8;     /* Very pale fresh wash for cards and backgrounds */
-  --tiffany-border: rgba(129, 216, 208, 0.45);
-
-  /* Backgrounds & Whites (Crisp & Editorial like Tiffany.com) */
+  /* RATNAYA CORE COLOR ARCHITECTURE */
+  /* 60% Warm Ivory / White */
+  --ivory: #F8F6F1;
+  --ivory-warm: #F3EFE6;
   --white: #FFFFFF;
-  --ivory: #FDFDFB;
-  --ivory-warm: #F8F7F4;
 
-  /* Accents */
-  --champagne: #CDB38B;
-  --burgundy: #682333;
+  /* 20% Deep Emerald & Dark Forest */
+  --emerald: hsl(170, 35%, 45%);
+  --emerald-deep: #05332C;
+  --forest: #005047;
 
-  /* Typography & High-Contrast Neutrals */
-  --charcoal: #111111;
-  --charcoal-soft: #242625;
-  --muted: #585D5B;
-  --light-muted: #8A908E;
-  --border: rgba(17, 17, 17, 0.08);
-  --border-light: rgba(17, 17, 17, 0.04);
+  /* 10% Soft Mint Glass */
+  --emerald-soft: #DCEBE5;
+  --mint-translucent: rgba(220, 235, 229, 0.55);
+  --mint-glow: #9CCFC1;
 
-  /* Fonts */
+  /* 5% Champagne */
+  --champagne: #D7C7A5;
+  --champagne-light: #F4EEDF;
+
+  /* 5% Muted Burgundy */
+  --burgundy: #5B1E2D;
+  --burgundy-soft: #7A2E40;
+
+  /* Neutrals & Typography */
+  --charcoal: #171918;
+  --muted: #6D726F;
+  --light-muted: #8E9491;
+  --border: rgba(23, 25, 24, 0.10);
+  --border-light: rgba(23, 25, 24, 0.06);
+
+  /* Typography */
   --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --sans: "Manrope", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
-  /* Layout & Transitions */
+  /* Layout & Animation */
   --container: 1440px;
   --radius: 2px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --shadow-sm: 0 4px 20px rgba(0, 125, 114, 0.05);
-  --shadow-md: 0 12px 36px rgba(0, 125, 114, 0.08);
+  --shadow-sm: 0 4px 20px rgba(7, 63, 54, 0.04);
+  --shadow-md: 0 12px 36px rgba(7, 63, 54, 0.08);
 }
 
 /* RESET */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -54,7 +59,7 @@ html {
 }
 
 body {
-  background: var(--white);
+  background: var(--ivory);
   color: var(--charcoal);
   font-family: var(--sans);
   font-weight: 400;
@@ -96,20 +101,19 @@ button {
   border: 0;
 }
 
-/* 1. ANNOUNCEMENT STRIP (MATCHING TIFFANY.COM TOP BANNER) */
+/* ANNOUNCEMENT STRIP */
 .announcement {
   height: 38px;
-  background: var(--tiffany);
-  color: var(--charcoal);
+  background: var(--forest);
+  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 32px;
   font-size: 11px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  font-weight: 600;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  font-weight: 500;
 }
 
 .announcement-center {
@@ -120,8 +124,8 @@ button {
 }
 
 .announcement-arrow {
-  color: var(--charcoal);
-  opacity: 0.7;
+  color: var(--champagne);
+  opacity: 0.75;
   transition: opacity 200ms;
 }
 
@@ -131,9 +135,8 @@ button {
 
 .announcement-badge {
   font-size: 10px;
-  color: rgba(17, 17, 17, 0.75);
+  color: rgba(255, 255, 255, 0.75);
   letter-spacing: 0.12em;
-  font-weight: 600;
 }
 
 @media (max-width: 860px) {
@@ -143,17 +146,18 @@ button {
     font-size: 10px;
     letter-spacing: 0.12em;
   }
+
   .announcement-badge {
     display: none;
   }
 }
 
-/* 2. SITE HEADER (AIRY, CLEAN WHITE WITH BLUR) */
+/* SITE HEADER */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(248, 246, 241, 0.94);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -161,8 +165,8 @@ button {
 }
 
 .site-header.scrolled {
-  background: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  background: rgba(248, 246, 241, 0.98);
+  box-shadow: 0 4px 20px rgba(6, 46, 41, 0.05);
 }
 
 .header-main {
@@ -199,18 +203,18 @@ button {
   font-size: 9px;
   letter-spacing: 0.38em;
   text-transform: uppercase;
-  color: var(--tiffany-dark);
+  color: var(--emerald);
   font-weight: 600;
 }
 
-/* NAVIGATION */
+/* NAVIGATION (under logo on desktop, centered) */
 .main-nav {
   height: 44px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 40px;
-  border-top: 1px solid var(--border-light);
+  border-top: 1px solid rgba(23, 25, 24, 0.05);
   max-width: var(--container);
   margin: 0 auto;
 }
@@ -231,13 +235,13 @@ button {
   bottom: 0;
   left: 50%;
   width: 0;
-  height: 2px;
-  background: var(--tiffany);
+  height: 1.5px;
+  background: var(--emerald);
   transition: width 250ms var(--ease), left 250ms var(--ease);
 }
 
 .main-nav a:hover {
-  color: var(--tiffany-dark);
+  color: var(--emerald);
 }
 
 .main-nav a:hover::after,
@@ -266,7 +270,7 @@ button {
 }
 
 .header-action:hover {
-  color: var(--tiffany-dark);
+  color: var(--emerald);
   transform: translateY(-1px);
 }
 
@@ -280,10 +284,10 @@ button {
   position: absolute;
   top: 2px;
   right: 2px;
-  background: var(--tiffany);
-  color: var(--charcoal);
+  background: var(--emerald);
+  color: var(--white);
   font-size: 9px;
-  font-weight: 700;
+  font-weight: 600;
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -300,16 +304,15 @@ button {
   color: var(--charcoal);
 }
 
-/* 3. HERO SECTION (LUMINOUS, AIRY & EDITORIAL LIKE TIFFANY) */
+/* HERO SECTION */
 .hero {
   position: relative;
-  min-height: 720px;
+  min-height: 740px;
   display: grid;
   grid-template-columns: 44% 56%;
-  background: linear-gradient(135deg, var(--white) 0%, var(--tiffany-light) 60%, var(--tiffany-soft) 100%);
+  background: var(--forest);
   overflow: hidden;
-  color: var(--charcoal);
-  border-bottom: 1px solid var(--border);
+  color: var(--white);
 }
 
 .hero-content {
@@ -328,8 +331,8 @@ button {
   font-size: 11px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--tiffany-dark);
-  font-weight: 700;
+  color: var(--champagne);
+  font-weight: 600;
   margin-bottom: 24px;
 }
 
@@ -337,8 +340,8 @@ button {
   content: '';
   display: inline-block;
   width: 18px;
-  height: 2px;
-  background: var(--tiffany);
+  height: 1px;
+  background: currentColor;
 }
 
 .hero h1 {
@@ -348,22 +351,22 @@ button {
   line-height: 0.88;
   letter-spacing: -0.035em;
   margin: 0 0 28px;
-  color: var(--charcoal);
+  color: var(--white);
 }
 
 .hero h1 em {
   font-style: italic;
   font-weight: 400;
-  color: var(--tiffany-dark);
+  color: var(--mint-glow);
 }
 
 .hero-description {
   max-width: 440px;
   margin-bottom: 38px;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.78);
   font-size: 15px;
   line-height: 1.7;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .hero-cta {
@@ -379,19 +382,19 @@ button {
   right: 40px;
   z-index: 5;
   text-align: right;
-  color: var(--charcoal);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 10px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   pointer-events: none;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .hero-aside-tag span {
   display: block;
   font-size: 9px;
   letter-spacing: 0.32em;
-  color: var(--tiffany-dark);
+  color: var(--champagne);
   margin-top: 4px;
 }
 
@@ -399,7 +402,6 @@ button {
   position: relative;
   overflow: hidden;
   height: 100%;
-  background: var(--tiffany-soft);
 }
 
 .hero-image-wrap img {
@@ -426,7 +428,7 @@ button {
 .slider-line {
   width: 42px;
   height: 2px;
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.3);
   position: relative;
   overflow: hidden;
   border-radius: 1px;
@@ -439,17 +441,32 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--tiffany-dark);
+  background: var(--champagne);
 }
 
 .slider-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.3);
 }
 
-/* BUTTONS (CLEAN LUXURY CONTRAST) */
+/* SUBTLE GLASS ACCENTS */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-mint {
+  background: rgba(220, 235, 229, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* BUTTONS */
 .button {
   display: inline-flex;
   align-items: center;
@@ -468,30 +485,30 @@ button {
   transition: all 300ms var(--ease);
 }
 
-.button-dark {
-  background: var(--charcoal);
+.button-glass {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   color: var(--white);
-  border-color: var(--charcoal);
+  backdrop-filter: blur(8px);
 }
 
-.button-dark:hover {
-  background: var(--tiffany-dark);
-  border-color: var(--tiffany-dark);
-  color: var(--white);
+.button-glass:hover {
+  background: var(--white);
+  color: var(--forest);
+  border-color: var(--white);
 }
 
-.button-tiffany {
-  background: var(--tiffany);
-  color: var(--charcoal);
-  border-color: var(--tiffany);
+.button-emerald {
+  background: var(--emerald);
+  color: var(--white);
+  border-color: var(--emerald);
 }
 
-.button-tiffany:hover {
-  background: var(--tiffany-dark);
-  color: var(--white);
-  border-color: var(--tiffany-dark);
+.button-emerald:hover {
+  background: var(--forest);
+  border-color: var(--forest);
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(0, 125, 114, 0.2);
+  box-shadow: 0 8px 24px rgba(7, 63, 54, 0.18);
 }
 
 .button-outline {
@@ -513,18 +530,18 @@ button {
   text-transform: uppercase;
   font-weight: 600;
   color: var(--charcoal);
-  border-bottom: 1.5px solid var(--tiffany);
+  border-bottom: 1px solid var(--border);
   padding-bottom: 3px;
   transition: all 250ms var(--ease);
 }
 
 .text-link:hover {
-  color: var(--tiffany-dark);
-  border-color: var(--tiffany-dark);
+  color: var(--emerald);
+  border-color: var(--emerald);
   gap: 12px;
 }
 
-/* SECTION */
+/* GENERIC SECTION */
 .section {
   max-width: var(--container);
   margin: 0 auto;
@@ -539,11 +556,11 @@ button {
 }
 
 .section-eyebrow {
-  color: var(--tiffany-dark);
+  color: var(--burgundy);
   font-size: 11px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -553,8 +570,8 @@ button {
   content: '';
   display: inline-block;
   width: 14px;
-  height: 2px;
-  background: var(--tiffany);
+  height: 1px;
+  background: currentColor;
 }
 
 .section-title {
@@ -577,18 +594,16 @@ button {
 .category-card {
   position: relative;
   overflow: hidden;
-  background: var(--tiffany-light);
+  background: var(--emerald-soft);
   aspect-ratio: 0.82;
   border-radius: var(--radius);
-  border: 1px solid var(--tiffany-border);
   box-shadow: var(--shadow-sm);
-  transition: transform 400ms var(--ease), box-shadow 400ms var(--ease), border-color 300ms;
+  transition: transform 400ms var(--ease), box-shadow 400ms var(--ease);
 }
 
 .category-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
-  border-color: var(--tiffany);
 }
 
 .category-card img {
@@ -606,12 +621,10 @@ button {
   position: absolute;
   inset: auto 0 0;
   padding: 24px 20px;
-  background: linear-gradient(
-    to top,
-    rgba(9, 62, 56, 0.88) 0%,
-    rgba(9, 62, 56, 0.45) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(to top,
+      rgba(6, 46, 41, 0.85) 0%,
+      rgba(6, 46, 41, 0.45) 50%,
+      transparent 100%);
   color: var(--white);
   display: flex;
   justify-content: space-between;
@@ -630,28 +643,28 @@ button {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 13px;
   backdrop-filter: blur(6px);
-  transition: transform 300ms var(--ease), background 300ms var(--ease), color 300ms;
+  transition: transform 300ms var(--ease), background 300ms var(--ease);
 }
 
 .category-card:hover .category-arrow {
   transform: translateX(4px);
-  background: var(--tiffany);
-  color: var(--charcoal);
+  background: var(--champagne);
+  color: var(--forest);
 }
 
-/* THE SIGNATURE COLLECTION (OCEANIC LUXURY TEAL) */
+/* THE SIGNATURE COLLECTION */
 .collection-feature {
   position: relative;
   display: grid;
   grid-template-columns: 42% 58%;
   min-height: 620px;
-  background: var(--tiffany-deep);
+  background: var(--forest);
   color: var(--white);
   overflow: hidden;
   max-width: var(--container);
@@ -668,12 +681,8 @@ button {
 }
 
 .collection-content .eyebrow {
-  color: var(--tiffany);
+  color: var(--champagne);
   margin-bottom: 20px;
-}
-
-.collection-content .eyebrow::before {
-  background: var(--tiffany);
 }
 
 .collection-content h2 {
@@ -686,7 +695,7 @@ button {
 }
 
 .collection-content p {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 15px;
   line-height: 1.7;
   max-width: 440px;
@@ -719,13 +728,12 @@ button {
   font-size: 9.5px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--tiffany);
+  color: rgba(255, 255, 255, 0.8);
   z-index: 5;
   text-align: right;
-  font-weight: 600;
 }
 
-/* PRODUCT GRID */
+/* PRODUCT GRID (MOST LOVED / BESTSELLERS) */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -735,20 +743,19 @@ button {
 .product-card {
   position: relative;
   background: var(--white);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-light);
   border-radius: var(--radius);
-  transition: transform 350ms var(--ease), box-shadow 350ms var(--ease), border-color 300ms;
+  transition: transform 350ms var(--ease), box-shadow 350ms var(--ease);
 }
 
 .product-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(0, 125, 114, 0.08);
-  border-color: var(--tiffany-border);
+  box-shadow: 0 16px 36px rgba(7, 63, 54, 0.07);
 }
 
 .product-image {
   position: relative;
-  background: var(--ivory);
+  background: #FAF8F5;
   aspect-ratio: 1;
   overflow: hidden;
   display: flex;
@@ -775,13 +782,13 @@ button {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--charcoal);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   transition: all 250ms var(--ease);
   z-index: 10;
 }
@@ -817,10 +824,10 @@ button {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   padding: 4px 8px;
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--tiffany-dark);
-  font-weight: 700;
-  border: 1px solid var(--tiffany-border);
+  background: rgba(248, 246, 241, 0.95);
+  color: var(--emerald);
+  font-weight: 600;
+  border: 1px solid var(--border);
   backdrop-filter: blur(4px);
 }
 
@@ -832,8 +839,8 @@ button {
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--tiffany-dark);
-  font-weight: 600;
+  color: var(--muted);
+  font-weight: 500;
   margin-bottom: 6px;
 }
 
@@ -873,23 +880,21 @@ button {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 600;
-  color: var(--charcoal);
-  padding: 6px 14px;
-  border: 1px solid var(--charcoal);
+  color: var(--emerald);
+  padding: 6px 12px;
+  border: 1px solid var(--emerald);
   border-radius: var(--radius);
   transition: all 250ms var(--ease);
 }
 
 .quick-add-btn:hover {
-  background: var(--tiffany);
-  border-color: var(--tiffany);
-  color: var(--charcoal);
+  background: var(--emerald);
+  color: var(--white);
 }
 
 /* EDITORIAL / GIFTING SECTION */
 .gifting-section {
-  background: var(--tiffany-light);
-  border: 1px solid var(--tiffany-border);
+  background: var(--emerald-soft);
   max-width: var(--container);
   margin: 0 auto 110px;
   display: grid;
@@ -920,7 +925,7 @@ button {
 }
 
 .gifting-content .eyebrow {
-  color: var(--tiffany-dark);
+  color: var(--burgundy);
   margin-bottom: 16px;
 }
 
@@ -931,14 +936,14 @@ button {
   line-height: 0.94;
   letter-spacing: -0.025em;
   margin-bottom: 22px;
-  color: var(--charcoal);
+  color: var(--forest);
 }
 
 .gifting-quote {
   font-family: var(--serif);
   font-style: italic;
   font-size: 21px;
-  color: var(--tiffany-dark);
+  color: var(--emerald);
   margin-bottom: 20px;
   line-height: 1.3;
 }
@@ -959,24 +964,24 @@ button {
 
 .gift-tag {
   padding: 8px 16px;
-  background: var(--white);
-  border: 1px solid var(--tiffany-border);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(7, 63, 54, 0.15);
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--charcoal);
-  font-weight: 600;
+  color: var(--forest);
+  font-weight: 500;
   border-radius: 20px;
   transition: all 250ms var(--ease);
 }
 
 .gift-tag:hover {
-  background: var(--tiffany);
-  color: var(--charcoal);
-  border-color: var(--tiffany);
+  background: var(--forest);
+  color: var(--white);
+  border-color: var(--forest);
 }
 
-/* MODEL CAMPAIGN SECTION */
+/* MODEL CAMPAIGN SECTION ("Indian Craft × Modern Fashion") */
 .campaign-modern {
   max-width: var(--container);
   margin: 0 auto;
@@ -995,7 +1000,6 @@ button {
   position: relative;
   overflow: hidden;
   min-height: 560px;
-  background: var(--tiffany-light);
 }
 
 .campaign-visual img {
@@ -1019,7 +1023,7 @@ button {
 }
 
 .campaign-info .eyebrow {
-  color: var(--tiffany-dark);
+  color: var(--emerald);
   margin-bottom: 18px;
 }
 
@@ -1075,8 +1079,7 @@ button {
   grid-template-columns: 46% 54%;
   gap: 60px;
   align-items: center;
-  background: var(--tiffany-light);
-  border: 1px solid var(--tiffany-border);
+  background: var(--ivory-warm);
   border-radius: var(--radius);
   padding: 70px 60px;
 }
@@ -1103,7 +1106,7 @@ button {
 }
 
 .story-copy .eyebrow {
-  color: var(--tiffany-dark);
+  color: var(--burgundy);
   margin-bottom: 16px;
 }
 
@@ -1140,8 +1143,8 @@ button {
 .story-pillar-number {
   font-family: var(--serif);
   font-size: 26px;
-  color: var(--tiffany-dark);
-  font-weight: 600;
+  color: var(--emerald);
+  font-weight: 500;
 }
 
 .story-pillar-label {
@@ -1155,7 +1158,7 @@ button {
 
 /* TRUST STRIP */
 .trust-strip {
-  background: var(--charcoal);
+  background: var(--forest);
   color: var(--white);
   padding: 34px 48px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -1180,7 +1183,7 @@ button {
 .trust-item svg {
   width: 22px;
   height: 22px;
-  color: var(--tiffany);
+  color: var(--champagne);
   margin-bottom: 4px;
 }
 
@@ -1202,13 +1205,13 @@ button {
 .newsletter {
   text-align: center;
   padding: 130px 24px;
-  background: var(--white);
+  background: var(--ivory);
   max-width: 800px;
   margin: 0 auto;
 }
 
 .newsletter .eyebrow {
-  color: var(--tiffany-dark);
+  color: var(--burgundy);
   justify-content: center;
   margin-bottom: 20px;
 }
@@ -1242,7 +1245,7 @@ button {
 }
 
 .newsletter-form:focus-within {
-  border-color: var(--tiffany-dark);
+  border-color: var(--emerald);
 }
 
 .newsletter-form input {
@@ -1269,12 +1272,11 @@ button {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 600;
-  transition: background 250ms, color 250ms;
+  transition: background 250ms;
 }
 
 .newsletter-form button:hover {
-  background: var(--tiffany);
-  color: var(--charcoal);
+  background: var(--emerald);
 }
 
 .newsletter-subtext {
@@ -1319,7 +1321,7 @@ button {
   font-size: 9px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--tiffany);
+  color: var(--champagne);
   margin-bottom: 24px;
 }
 
@@ -1349,7 +1351,7 @@ button {
 }
 
 .footer-col a:hover {
-  color: var(--tiffany);
+  color: var(--champagne);
   transform: translateX(2px);
 }
 
@@ -1377,7 +1379,7 @@ button {
 }
 
 .footer-bottom-links a:hover {
-  color: var(--tiffany);
+  color: var(--white);
 }
 
 /* TOAST NOTIFICATION */
@@ -1385,10 +1387,10 @@ button {
   position: fixed;
   bottom: 28px;
   right: 28px;
-  background: var(--charcoal);
+  background: var(--forest);
   color: var(--white);
   padding: 16px 24px;
-  border-left: 3px solid var(--tiffany);
+  border: 1px solid rgba(220, 235, 229, 0.3);
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
   z-index: 2000;
   font-size: 12px;
@@ -1407,39 +1409,107 @@ button {
   pointer-events: auto;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE BREAKPOINTS */
 @media (max-width: 1040px) {
-  .hero { grid-template-columns: 1fr; }
-  .hero-content { padding: 70px 40px; }
-  .hero-image-wrap { min-height: 480px; }
-  .category-grid { grid-template-columns: repeat(3, 1fr); }
-  .collection-feature { grid-template-columns: 1fr; }
-  .collection-content { padding: 60px 40px; }
-  .collection-image-wrap { min-height: 450px; }
-  .product-grid { grid-template-columns: repeat(2, 1fr); }
-  .gifting-section { grid-template-columns: 1fr; }
-  .gifting-image { min-height: 420px; }
-  .gifting-content { padding: 60px 40px; }
-  .campaign-card { grid-template-columns: 1fr; }
-  .campaign-visual { min-height: 440px; }
-  .campaign-info { padding: 60px 40px; }
-  .story-grid { grid-template-columns: 1fr; padding: 50px 30px; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-  .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    padding: 70px 40px;
+    min-height: auto;
+  }
+
+  .hero-image-wrap {
+    min-height: 480px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .collection-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .collection-content {
+    padding: 60px 40px;
+  }
+
+  .collection-image-wrap {
+    min-height: 450px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gifting-section {
+    grid-template-columns: 1fr;
+  }
+
+  .gifting-image {
+    min-height: 420px;
+  }
+
+  .gifting-content {
+    padding: 60px 40px;
+  }
+
+  .campaign-card {
+    grid-template-columns: 1fr;
+  }
+
+  .campaign-visual {
+    min-height: 440px;
+  }
+
+  .campaign-info {
+    padding: 60px 40px;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    padding: 50px 30px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
 }
 
 @media (max-width: 768px) {
-  .header-main { height: 72px; padding: 0 20px; }
-  .menu-toggle { display: block; }
-  .logo-name { font-size: 28px; }
-  .logo-subtitle { font-size: 8px; letter-spacing: 0.28em; }
+  .header-main {
+    height: 72px;
+    padding: 0 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .logo-name {
+    font-size: 28px;
+  }
+
+  .logo-subtitle {
+    font-size: 8px;
+    letter-spacing: 0.28em;
+  }
+
   .main-nav {
     display: none;
     position: absolute;
     top: 72px;
     left: 0;
     right: 0;
-    background: var(--white);
+    background: var(--ivory);
     flex-direction: column;
     height: auto;
     padding: 24px 20px;
@@ -1447,16 +1517,56 @@ button {
     border-bottom: 1px solid var(--border);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   }
-  .main-nav.open { display: flex; }
-  .section { padding: 75px 20px; }
-  .campaign-modern, .story-section { padding: 0 20px 75px; }
-  .category-grid { grid-template-columns: repeat(2, 1fr); }
-  .category-card:last-child { grid-column: span 2; }
-  .product-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
-  .product-info { padding: 16px 12px; }
-  .product-name { font-size: 18px; }
-  .story-pillars { grid-template-columns: 1fr; }
-  .site-footer { padding: 70px 20px 30px; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; text-align: center; gap: 14px; }
+
+  .main-nav.open {
+    display: flex;
+  }
+
+  .section {
+    padding: 75px 20px;
+  }
+
+  .campaign-modern,
+  .story-section {
+    padding: 0 20px 75px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-card:last-child {
+    grid-column: span 2;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .product-info {
+    padding: 16px 12px;
+  }
+
+  .product-name {
+    font-size: 18px;
+  }
+
+  .story-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer {
+    padding: 70px 20px 30px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+  }
 }
