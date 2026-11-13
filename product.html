@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#CCF4EA">
   <title id="page-title">The Apsara Emerald Floral Studs | RATNAYA JEWELLERS</title>
   <meta name="description" id="page-meta-desc" content="Handcrafted in solid 18K gold with natural Colombian emeralds and brilliant diamonds by Ratnaya Jewellers.">
   <link rel="stylesheet" href="styles.css?v=3.3">
@@ -90,8 +91,8 @@
       bottom: 16px;
       left: 50%;
       transform: translateX(-50%);
-      background: rgba(7, 63, 54, 0.9);
-      color: #FFFFFF;
+      background: var(--forest);
+      color: var(--mint-signature);
       padding: 6px 16px;
       border-radius: 20px;
       font-size: 10.5px;
@@ -157,12 +158,13 @@
     .pdp-tag {
       display: inline-block;
       padding: 4px 12px;
-      background: var(--forest);
-      color: var(--champagne);
+      background: var(--mint-signature);
+      color: var(--forest);
       font-size: 9.5px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      font-weight: 600;
+      font-weight: 700;
+      border: 1px solid var(--mint-border);
       border-radius: 2px;
     }
 
@@ -274,7 +276,7 @@
 
     .pdp-metal-pill.active {
       border-color: var(--forest);
-      background: rgba(7, 63, 54, 0.06);
+      background: var(--mint-signature);
       color: var(--forest);
       font-weight: 600;
     }
